@@ -1,0 +1,112 @@
+body {
+    background-color: #f0ff9c;
+    color: #222222;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+        font-size: 4rem;
+        color: #34495e;
+        text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #000000;
+    /* 3-value shorthand: 40px top, 0 left/right, 20px bottom */
+    margin: 40px 0 20px; 
+}
+
+p {
+    font: 16px/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+        margin: 20px 15%;
+    color: rgb(0, 0, 0);
+.dog {
+    width: 600px;
+    height: auto;
+}
+
+
+/* Using a class selector */
+.phonetic {
+    font-style: italic;
+    font-weight: bold;
+    color: #ff00ea; 
+}
+
+
+/*Centering images using margin: auto */
+figure {
+    /* 2-value shorthand: 30px top/bottom, auto left/right to center the block */
+    margin: 30px auto;
+    text-align: center;
+}
+
+.stat-highlight {
+    background-color: #fbff00; 
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+a:link { color: #2346C8; } /* unvisited link */
+a:visited { color: #A81CA5; } /* visited link */
+a:hover { color: #7C7EEF; } /* mouse over */
+a:focus { color: #7C7EEF; } /* selected with keyboard */
+a:active { color: #FF1A1A; } /* active link */
+
+
+.source-link {
+    display: block;      
+    text-align: center;    
+    margin-bottom: 30px; 
+}
+
+
+.header-color {
+    text-align: center;
+    color: #000000;
+    background-color: #ecff83;
+}
+
+.title-color {
+    text-align: center;
+    color: #000000;
+    background-color: #ffb5f9;
+}
+
+.content-block {
+    margin: 30px auto; 
+    max-width: 1200px; 
+    padding: 5px;
+}
+
+
+
+/* Table CSS */
+table {
+    margin: 50px auto; 
+    border-collapse: collapse;
+    background-color: #ffb5f9;
+    width: 90%; 
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #222;
+    text-align: left;
+}
+
+th {
+    background-color: #f8e63e; 
+}
+
+.origin-text {
+    font-weight: bold;
+    color: #ff00ea; 
+}
+/* Table CSS END*/
+}
