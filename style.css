@@ -1,112 +1,153 @@
+html {
+    font-size: 62.5%;
+}
+
 body {
-    background-color: #f0ff9c;
-    color: #222222;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    background-color: #f4f6f8;
+    color: #1f2933;
+    margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+/*Headings Start*/
+
 h1 {
-    font-family: 'Roboto', sans-serif;
-        font-size: 4rem;
-        color: #34495e;
-        text-align: center;
+    font-size: 3.2rem;
+    text-align: center;
+    margin: 3rem 0 1rem;
+    color: #0f172a;
 }
 
 h2 {
-    text-align: center;
-    color: #000000;
-    /* 3-value shorthand: 40px top, 0 left/right, 20px bottom */
-    margin: 40px 0 20px; 
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #1e3a5f;
 }
+/*Headings End*/
 
-p {
-    font: 16px/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-        margin: 20px 15%;
-    color: rgb(0, 0, 0);
-.dog {
-    width: 600px;
+
+/*Layout Start*/
+main {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.content-block {
+    margin: 30px auto; 
+    max-width: 1200px; 
+    padding: 5px;
+}
+.float-left {
+    float: left;
+    width: 25rem;
+    margin: 0 2rem 1rem 0;
+}
+.float-left img {
+    width: 100%;
     height: auto;
 }
-
-
-/* Using a class selector */
-.phonetic {
-    font-style: italic;
-    font-weight: bold;
-    color: #ff00ea; 
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
 }
+/*Layout End*/
 
 
-/*Centering images using margin: auto */
+/*Paragraphs Start*/
+p {
+    margin-bottom: 1.5rem;
+}
+/*Paragraphs End*/
+
+
+/*Images Start*/
 figure {
-    /* 2-value shorthand: 30px top/bottom, auto left/right to center the block */
-    margin: 30px auto;
+    margin: 2rem 0;
     text-align: center;
 }
+img {
+    width: 100%;
+    max-width: 45rem;
+    height: auto;
+    border-radius: 6px;
+}
+figcaption {
+    font-size: 1.4rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+/*Images End*/
 
-.stat-highlight {
-    background-color: #fbff00; 
-    font-weight: bold;
-    padding: 2px 5px;
-    border-radius: 4px;
-    margin: 0 2px;
+/*Links Start*/
+.content-block a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.content-block a:hover {
+    text-decoration: underline;
 }
 
 a:link { color: #2346C8; } /* unvisited link */
 a:visited { color: #A81CA5; } /* visited link */
 a:hover { color: #7C7EEF; } /* mouse over */
 a:focus { color: #7C7EEF; } /* selected with keyboard */
-a:active { color: #FF1A1A; } /* active link */
+a:active { color: #FF1A1A; } /* active link *
+/*Links End*/
 
 
-.source-link {
-    display: block;      
-    text-align: center;    
-    margin-bottom: 30px; 
+/*Highlight Utility Start*/
+.stat-highlight {
+    background-color: #e0f2fe;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
 }
-
-
-.header-color {
-    text-align: center;
-    color: #000000;
-    background-color: #ecff83;
+.phonetic {
+    font-style: italic;
+    font-weight: 600;
+    color: #1e3a5f;
 }
-
-.title-color {
-    text-align: center;
-    color: #000000;
-    background-color: #ffb5f9;
-}
-
-.content-block {
-    margin: 30px auto; 
-    max-width: 1200px; 
-    padding: 5px;
-}
+/*Highlight Utility End*/
 
 
-
-/* Table CSS */
+/*Table Styling Start*/
 table {
-    margin: 50px auto; 
+    width: 100%;
     border-collapse: collapse;
-    background-color: #ffb5f9;
-    width: 90%; 
+    margin-top: 4rem;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+caption {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    padding: 1rem 0;
 }
 
 th, td {
-    padding: 12px;
-    border: 1px solid #222;
+    padding: 1.2rem;
     text-align: left;
 }
 
 th {
-    background-color: #f8e63e; 
+    background-color: #e5e7eb;
+    font-weight: 600;
 }
 
-.origin-text {
-    font-weight: bold;
-    color: #ff00ea; 
+tr:nth-child(even) {
+    background-color: #f9fafb;
 }
-/* Table CSS END*/
-}
+/*Table Styling End*/
+
