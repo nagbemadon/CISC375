@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Grid – In‑Class Practice</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      line-height: 1.4;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 10px;
+      max-width: 700px;
+    }
+
+    /* === GRID CONTAINER =================================== */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;                /* Turn this into a grid container */
+      grid-template-rows: 120px 120px;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    /* === GRID ITEMS ======================================= */
+    .item {
+      background: #1e88e5;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+    }
+
+    /* Step 3 in class: demonstrate spanning */
+    .item-wide {
+      background: #43a047; 
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Grid – In‑Class Practice</h1>
+  <p>
+    There are nine boxes inside a <code>.grid</code> container.
+    Your will change only css grid properties to see
+    how the layout responds.
+  </p>
+
+  <div class="grid">
+    <div class="item item-wide">1 (spans)</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+  </div>
+
+  <p style="margin-top:20px; font-size:14px;">
+    Try these steps:
+    <br>1. Modify the css style to show a grid with 3 columns.
+    <br>2. Show two explicit rows size 120px 120px
+    <br>3. Specify a space between the cell of 10px
+    <br>4. Add the properties to item-wide to demonstrate spanning over two columns.
+  </p>
+</body>
+</html>

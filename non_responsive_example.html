@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Non-Responsive Layout Example</title>
+  <!-- NOTE: Intentionally NO viewport meta tag -->
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #e0e0e0;
+    }
+
+    .page-wrapper {
+      /* Fixed width page - will overflow on small screens */
+      width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-left: 4px solid #9e9e9e;
+      border-right: 4px solid #9e9e9e;
+    }
+
+    .header {
+      height: 120px;
+      background: #283593;
+      color: #ffffff;
+      padding: 20px 40px;
+    }
+
+    .header-title {
+      font-size: 32px; /* Too large for small screens */
+      margin-bottom: 5px;
+    }
+
+    .header-subtitle {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .nav {
+      background: #3949ab;
+      padding: 10px 40px;
+    }
+
+    .nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-right: 30px; /* Fixed spacing */
+      font-size: 16px;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    .content-wrapper {
+      /* Fixed-height hero plus two fixed-width columns */
+      padding: 20px 40px 40px 40px;
+    }
+
+    .hero {
+      background: #eeeeee;
+      border: 1px solid #bdbdbd;
+      padding: 20px;
+      margin-bottom: 20px;
+      height: 260px; /* Fixed height may cause overflow */
+      overflow: hidden;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .hero img {
+      /* Large, non-flexible image */
+      width: 600px;
+      height: 200px;
+      float: right;
+      margin-left: 20px;
+      border: 4px solid #9e9e9e;
+    }
+
+    .columns {
+      /* Two fixed-width columns that will not adapt */
+      display: block; /* not flex/grid */
+    }
+
+    .sidebar {
+      width: 300px;
+      float: left;
+      background: #f5f5f5;
+      border: 1px solid #bdbdbd;
+      padding: 15px;
+      box-sizing: border-box;
+      margin-right: 20px;
+      min-height: 260px;
+    }
+
+    .main {
+      width: 760px; /* 300 + 20 + 760 = 1080 + padding fits 1200px wrapper */
+      float: left;
+      border: 1px solid #bdbdbd;
+      padding: 15px;
+      box-sizing: border-box;
+      min-height: 260px;
+    }
+
+    .footer {
+      clear: both;
+      background: #212121;
+      color: #ffffff;
+      padding: 15px 40px;
+      text-align: right;
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #c5cae9;
+      padding: 4px 10px;
+      margin: 4px 4px 0 0;
+      font-size: 13px;
+    }
+
+    /* NOTE: No media queries, no percentages, no flex/grid layout */
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="header-title">Non-Responsive Web Page Example</div>
+      <div class="header-subtitle">Try this on a phone to see why responsive design matters.</div>
+    </header>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#articles">Articles</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="content-wrapper">
+      <section class="hero" id="home">
+        <!-- Decorative big image from placeholder service -->
+        <img src="./Images/Salinas.png" alt="Salinas, a beach town." />
+        <h2>Fixed-Width Layout</h2>
+        <p>
+          This page is intentionally <strong>not responsive</strong>.
+          The entire layout is locked to a width of <code>1200px</code>,
+          fonts are set with fixed pixel sizes, and this large image has a
+          fixed width of <code>600px</code>.
+        </p>
+        <p>
+          On a small screen, you will need to scroll horizontally, zoom out,
+          or both. This makes reading difficult and navigation frustrating.
+        </p>
+      </section>
+
+      <div class="columns">
+        <aside class="sidebar" id="articles">
+          <h3>Sidebar</h3>
+          <p>
+            This sidebar has a fixed width of <code>300px</code>.
+            It does not shrink on narrow screens.
+          </p>
+          <p>
+            Tags:
+          </p>
+          <div class="tag">fixed-width</div>
+          <div class="tag">no-viewport</div>
+          <div class="tag">hard-to-read</div>
+          <div class="tag">scroll-x</div>
+        </aside>
+
+        <main class="main" id="gallery">
+          <h3>Main Content</h3>
+          <p>
+            The main column is also fixed at <code>760px</code> wide.
+            On a phone, the combination of fixed sidebar and fixed main
+            column will force the user to pan horizontally to read lines
+            of text.
+          </p>
+          <p>
+            Things to notice when you show this to students:
+          </p>
+          <ul>
+            <li>The browser shows a horizontal scrollbar on small screens.</li>
+            <li>Text does not reflow to fit the viewport width.</li>
+            <li>The large header and image dominate the small screen.</li>
+            <li>Tap targets (navigation links) are small and close together.</li>
+          </ul>
+          <p>
+            In a second step, you can copy this file and progressively
+            improve it: add a viewport meta tag, convert widths to
+            percentages, use flexbox or grid, and introduce media queries.
+          </p>
+        </main>
+      </div>
+    </div>
+
+    <footer class="footer" id="contact">
+      Non-responsive demo &mdash; ready to be refactored into a responsive design.
+    </footer>
+  </div>
+</body>
+</html>

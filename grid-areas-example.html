@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Grid: grid-template-areas Demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      line-height: 1.4;
+      color: #222;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      max-width: 700px;
+    }
+
+    /* ============================================
+       GRID CONTAINER USING grid-template-areas
+       ============================================ */
+    .layout {
+      display: grid;                 /* turn on Grid */
+      grid-template-columns: 180px 1fr 220px;
+      grid-template-rows: 70px 1fr 70px;
+
+      /* Visual pattern for the layout */
+      grid-template-areas:
+        "header  nav  nav"
+        "aside main main"
+        "footer  footer  footer";
+
+      gap: 10px;                     /* space between regions */
+      margin-top: 20px;
+      min-height: 500px;   /*           just so it looks tall enough */
+    }
+
+    /* ============================================
+       GRID AREAS – each box claims a named area
+       ============================================ */
+    .header {
+      grid-area: header;             /* matches name in template-areas */
+      background: #1e88e5;
+    }
+
+    .nav {
+      grid-area: nav;
+      background: #3949ab;
+    }
+
+    .main {
+      grid-area: main;
+      background: #43a047;
+    }
+
+    .aside {
+      grid-area: aside;
+      background: #fb8c00;
+    }
+
+    .footer {
+      grid-area: footer;
+      background: #6d4c41;
+    }
+
+    /* Shared styling for all regions */
+    .box {
+      color: #fff;
+      border-radius: 6px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .label {
+      font-size: 12px;
+      margin-top: 6px;
+      opacity: 0.9;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>CSS Grid: <code>grid-template-areas</code> example</h1>
+  <p>
+    This layout is built by naming areas: <strong>header</strong>, <strong>nav</strong>, 
+    <strong>main</strong>, <strong>aside</strong>, and <strong>footer</strong>.  
+  </p>
+
+  <!-- GRID CONTAINER -->
+  <div class="layout">
+    <header class="box header">
+      Header
+      <div class="label">grid-area: header</div>
+    </header>
+
+    <nav class="box nav">
+      Navigation
+      <div class="label">grid-area: nav</div>
+    </nav>
+
+    <main class="box main">
+      Main Content
+      <div class="label">grid-area: main</div>
+    </main>
+
+    <aside class="box aside">
+      Sidebar
+      <div class="label">grid-area: aside</div>
+    </aside>
+
+    <footer class="box footer">
+      Footer
+      <div class="label">grid-area: footer</div>
+    </footer>
+  </div>
+
+  <p style="margin-top:18px; font-size:14px;">
+    Demo idea:
+    Change the visual pattern in <code>grid-template-areas</code>
+       and predict how the layout will change. Try different configurations
+  </p>
+</body>
+</html>
