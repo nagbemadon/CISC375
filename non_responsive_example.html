@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Non-Responsive Layout Example</title>
-  <!-- NOTE: Intentionally NO viewport meta tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -11,10 +11,10 @@
       padding: 0;
       background: #e0e0e0;
     }
-
+/* Fixed width page - will overflow on small screens */
     .page-wrapper {
-      /* Fixed width page - will overflow on small screens */
-      width: 1200px;
+      max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
       background: #ffffff;
       border-left: 4px solid #9e9e9e;
@@ -60,12 +60,10 @@
     }
 
     .hero {
-      background: #eeeeee;
-      border: 1px solid #bdbdbd;
-      padding: 20px;
-      margin-bottom: 20px;
-      height: 260px; /* Fixed height may cause overflow */
-      overflow: hidden;
+    background: #eeeeee;
+    border: 1px solid #bdbdbd;
+    padding: 20px;
+    margin-bottom: 20px;
     }
 
     .hero h2 {
@@ -78,18 +76,18 @@
       line-height: 1.5;
     }
 
-    .hero img {
-      /* Large, non-flexible image */
-      width: 600px;
-      height: 200px;
-      float: right;
-      margin-left: 20px;
-      border: 4px solid #9e9e9e;
+    .hero img { /*Make the img flexible*/
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    border: 4px solid #9e9e9e;
     }
 
     .columns {
-      /* Two fixed-width columns that will not adapt */
-      display: block; /* not flex/grid */
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     .sidebar {
@@ -149,7 +147,7 @@
     <div class="content-wrapper">
       <section class="hero" id="home">
         <!-- Decorative big image from placeholder service -->
-        <img src="./Images/Salinas.png" alt="Salinas, a beach town." />
+        <img src="./Images/buildings-by-the-beach-of-salinas-ecuador-scaled.jpg" alt="Salinas, a beach town." />
         <h2>Fixed-Width Layout</h2>
         <p>
           This page is intentionally <strong>not responsive</strong>.

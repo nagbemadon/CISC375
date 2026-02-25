@@ -14,7 +14,6 @@ body {
 
 
 /*Headings Start*/
-
 h1 {
     font-size: 3.2rem;
     text-align: center;
@@ -31,21 +30,30 @@ h2 {
 
 
 /*Layout Start*/
+header {
+    position: relative;
+    padding: 2rem 0;
+    background: white;
+    z-index: 1;
+}
 main {
     max-width: 100rem;
     margin: 0 auto;
     padding: 2rem;
 }
 .content-block {
-    margin: 30px auto; 
-    max-width: 1200px; 
-    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem auto;
+    max-width: 100rem;
 }
 .float-left {
     float: left;
-    width: 25rem;
-    margin: 0 2rem 1rem 0;
+    width: 100%;
+    margin: 0 0 2rem 0;
 }
+
 .float-left img {
     width: 100%;
     height: auto;
@@ -61,7 +69,6 @@ main {
   min-height: 100vh;
 }
 
-
 /*Layout End*/
 
 
@@ -76,6 +83,7 @@ p {
 figure {
     margin: 2rem 0;
     text-align: center;
+    position: relative;
 }
 img {
     width: 100%;
@@ -158,3 +166,16 @@ tr:nth-child(even) {
 }
 /*Table Styling End*/
 
+/*Mobile First Design Start*/
+/*
+@media (min-width: 600px) {
+
+    .float-left {
+        float: left;
+        width: 40%;
+        max-width: 25rem;
+        margin: 0 2rem 1rem 0;
+    }
+
+}
+*/
