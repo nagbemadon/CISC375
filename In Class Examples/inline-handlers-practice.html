@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <!-- HTML (starter code) (This is the inline way to do it)
+    <button id="btn1" onclick="sayHello()">Say Hello</button>
+    <button id="btn2" onclick="sayGoodbye()">Say Goodbye</button>
+    <button id="btn3" onclick="changeColor()">Change Color</button>
+    -->
+
+    <!--This is the way we should be doing it -->
+    <button id="btn1">Say Hello</button>
+    <button id="btn2">Say Goodbye</button>
+    <button id="btn3">Change Color</button>
+
+    <script>
+        function sayHello(e) { 
+            alert('Hello!'); 
+        } 
+        function sayGoodbye(e) { 
+            alert('Goodbye!'); 
+        } 
+        function random(number) { 
+            return Math.floor(Math.random() * (number+1)); 
+        }
+        function changeColor() { 
+           const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            document.body.style.backgroundColor = rndCol;
+            alert(`Background changed to ${rndCol}`);
+        }
+
+        
+
+        const btn1 = document.querySelector('#btn1');
+        const btn2 = document.querySelector('#btn2');
+        const btn3 = document.querySelector('#btn3');
+        
+        btn1.addEventListener('click', sayHello);
+        btn2.addEventListener('click', sayGoodbye);
+        btn3.addEventListener('click', changeColor);
+
+        btn3.addEventListener('click', () => {
+        console.log(document.body.style.backgroundColor);
+      });
+
+        btn1.addEventListener('click', function(e) {
+            console.log(e.target.id);
+        }
+     );
+        btn2.addEventListener('click', function(e) {
+            console.log(e.target.id);
+        }
+     );
+
+     </script>
+
+</body>
+
+</html>

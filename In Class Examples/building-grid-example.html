@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Grid Generator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        #grid {
+            background-color: #333;
+            border: 2px solid #000;
+            /* The grid layout is handled dynamically in JS */
+        }
+
+        .grid-cell {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .grid-cell:hover {
+            filter: brightness(.75);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Colored Grid Generator</h1>
+    <div id="grid"></div>
+
+    <script>
+        function createGrid(rows, cols) {
+            const container = document.querySelector('#grid');
+            container.innerHTML = ''; // Clear existing content
+
+            // Set container to grid layout
+            container.style.display = 'grid';
+            container.style.gridTemplateColumns = `repeat(${cols}, 50px)`;
+            container.style.gap = '1px';
+
+            // Initialize the 2D logic array
+            // This maps the visual DOM to a data structure
+            
+            const gridState = Array(rows).fill(null).map(() => Array(cols).fill(0));
+         
+            for (let y = 0; y < rows; y++) {
+                for (let x = 0; x < cols; x++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'grid-cell';
+                    
+                    // Store coordinates in dataset for easy retrieval
+                    // dataset property allows you to attach custom data to an HTML element, attributes that start with data-
+                    cell.dataset.x = x;
+                    cell.dataset.y = y;
+                
+                    // Visual feedback and state update
+                    cell.addEventListener('click', () => {
+                        console.log(`Clicked: (${x}, ${y})`);
+                        
+                        // Toggle visual state
+                        cell.style.backgroundColor = 'lightblue';
+                        
+                        // Update the logic array (1 = occupied/clicked)
+                        gridState[y][x] = 1;
+                        console.table(gridState); // Show the 2D array in console
+
+                    });
+
+                    container.appendChild(cell);
+                }
+            }
+            
+            return gridState;
+        }
+
+        // Initialize a 7x7 grid
+        const myGameLogic = createGrid(7, 7);
+    </script>
+</body>
+</html>

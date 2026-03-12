@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Driven Quiz UI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        #quiz {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* 
+           This class is added dynamically by JavaScript.
+           It transforms a plain <div> into a UI card.
+        */
+        .question-card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db; /* Blue accent */
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Styling the buttons created in the inner loop */
+        button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        button:hover {
+            background-color: #e2e6ea;
+            border-color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The Empty Container -->
+    <div id="quiz"></div>
+
+    <script>
+        // 1. The Data
+        const questions = [
+            {text: 'What is 2+2?', options: ['3','4','5']},
+            {text: 'What is 3+3?', options: ['5','6','7']},
+            {text: 'What is the capital of France?', options: ['London','Berlin','Paris']}
+        ];
+
+        // 2. The Target
+        const container = document.querySelector('#quiz');
+
+        // 3. The Builder (Data-to-DOM)
+        questions.forEach((question, index) => {
+            
+            // Create the container for this specific question
+            const qDiv = document.createElement('div');
+            
+            // Add a class so our CSS can style it 
+            qDiv.classList.add('question-card');
+            
+            // Set the question text
+            // Note: This sets the text of the parent div. 
+            // Appended children (buttons) will appear after this text.
+            qDiv.textContent = `Q${index + 1}: ${question.text}`;
+            
+            //console.log(qDiv.textContent); <- Used to see the output in the console
+
+            // Create buttons for each option
+            question.options.forEach(option => {
+                const btn = document.createElement('button');
+                btn.textContent = option;
+
+                //console.log(btn.textContent);
+                
+                // Option1: Add an event listener to make it interactive
+                btn.addEventListener('click', () => {
+                    // Create an alert that displays the content of the clicked button.
+                    alert(`You clicked: ${option}`);
+                });
+
+                // Option2: Print the selected answer to the console.
+
+                
+                // Insert/Append the button representing an answer into the card
+                qDiv.appendChild(btn);
+
+            });
+
+            // Insert/Append the fully built card into the page
+            container.appendChild(qDiv);
+  
+        });
+    </script>
+</body>
+</html>

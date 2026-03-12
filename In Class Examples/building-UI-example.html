@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="app">
+    </main>
+    <script>
+        const container = document.querySelector('#app');
+           function showWelcomeScreen() {
+               container.innerHTML = ''; // Clear everything
+               const title = document.createElement('h1');
+               title.textContent = 'Welcome to Trivia!';
+               const startBtn = document.createElement('button');
+               startBtn.textContent = 'Start Game';
+               startBtn.addEventListener('click', showQuestionScreen);
+            
+               
+               
+               container.appendChild(title);
+               container.appendChild(startBtn);
+               subtitle.textContent = 'Instructions should go here';
+               container.insertBefore(subtitle, startBtn);
+               //test insertBefore
+           }
+           function showQuestionScreen() {
+                
+                /*
+                container.innerHTML = '<h1>This is a second screen</h1>'; // Clear welcome screen
+               // Build question UI here...    
+               */
+            }    
+    </script>
+    <script>
+        showWelcomeScreen();
+    </script>
+</body>
+</html>

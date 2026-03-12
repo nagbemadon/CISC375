@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation Test Page</title>
+  <script src="JavaScript Examples/DOM-manipulation.js"></script>
+  <style>
+    .greenish {
+      color: green;
+    }
+
+    .blueish {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="main-title">JavaScript Test Page</h1>
+
+  <!-- Some content based on MDN page -->
+  <p>
+    JavaScript is a scripting or programming language that allows you to implement
+    complex features on web pages — dynamic content, interactive behavior, and more.
+    It works together with HTML and CSS to make web pages come alive.
+  </p>
+
+  <div class="info">This is a div with class "info".</div>
+  <div class="info">Another div with the same class.</div>
+
+  <section>
+    <p class="note">This paragraph has class "note".</p>
+    <p id="special-paragraph">This paragraph has id "special-paragraph".</p>
+  </section>
+  <script>
+    changingContent();
+  </script>
+</body>
+
+</html>
